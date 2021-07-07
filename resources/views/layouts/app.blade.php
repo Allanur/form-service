@@ -13,7 +13,7 @@
 <body class="font-sans antialiased">
 <script>
 	window.Laravel = {!!json_encode([
-               'isLoggedin' => true,
+               'isLoggedIn' => true,
                'user' => 'bba',
                'csrf' => csrf_token(),
            ])!!}
@@ -21,18 +21,13 @@
 
 <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
 	@include('partials.sidebar')
-	<main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+	<main class="main flex flex-col flex-grow ml-64 transition-all duration-150 ease-in">
 		@include('partials.header')
 		<div class="main-content flex flex-col flex-grow p-4">
 			@yield('content')
-
 		</div>
 	</main>
 </div>
-<!--
-<div id="app" class="mt-6">
-	<form-title></form-title>
-</div>-->
 
 @routes
 <script src="{{ asset('js/app.js') }}"></script>

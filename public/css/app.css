@@ -31940,7 +31940,7 @@ video {
 
 .btn-red:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
   --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -31953,14 +31953,56 @@ video {
   transition-duration: 150ms;
 }
 
-.btn-circle {
-  border-radius: 1.5rem;
-  height: 2.5rem;
+.btn-action {
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-action:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-action {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  width: 2.5rem
+  width: 2rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-action-big {
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.btn-action-big:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-action-big {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 2.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .tooltip {

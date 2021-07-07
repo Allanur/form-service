@@ -31996,12 +31996,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      formTypes: ['text', 'number', 'select', 'multiple_choice'],
+      formTypes: ['text', 'number', 'select', 'multiple_choice', 'date'],
       typeLabel: {
         text: 'Text',
         number: 'Number',
         select: 'Select',
-        multiple_choice: 'Multiple choice'
+        multiple_choice: 'Multiple choice',
+        date: 'Date'
       }
     };
   }
@@ -32347,7 +32348,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   /* PROPS */
   , ["modelValue", "index"])]), $options.valuesRequired ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     type: "button",
-    "class": "btn btn-circle bg-gray-100 hover:bg-gray-300 mt-6",
+    "class": "btn-action-big bg-gray-100 hover:bg-gray-300 mt-8 h-10 w-10",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $data.show = !$data.show;
     })
@@ -32402,14 +32403,14 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     type: "button",
-    "class": "btn btn-red btn-circle has-tooltip mr-4",
+    "class": "btn-action btn-red has-tooltip mr-3",
     onClick: _cache[7] || (_cache[7] = function ($event) {
       return _ctx.$emit('propertyRemoved', $props.propertyIndex);
     })
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TrashIcon), _hoisted_11]), $options.valuesRequired ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
     key: 0,
     type: "button",
-    "class": "btn btn-blue btn-circle has-tooltip",
+    "class": "btn-action btn-blue has-tooltip",
     onClick: _cache[8] || (_cache[8] = function () {
       return $options.addValue && $options.addValue.apply($options, arguments);
     })
@@ -32619,13 +32620,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["name", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     type: "button",
-    "class": "btn btn-circle bg-gray-100 hover:bg-gray-200 transition-all",
+    "class": "btn-action bg-red-600 hover:bg-red-400 transition-all text-white",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return _ctx.$emit('removeClicked', $props.valueIndex);
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_XIcon, {
-    "class": "w-4 h-4"
-  })])]), $setup.v$.modelValue.value.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.v$.modelValue.value.$errors[0].$message), 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_XIcon)])]), $setup.v$.modelValue.value.$error ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.v$.modelValue.value.$errors[0].$message), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }

@@ -95,12 +95,13 @@ export default {
 	},
 	data() {
 		return {
-			formTypes: ['text', 'number', 'select', 'multiple_choice'],
+			formTypes: ['text', 'number', 'select', 'multiple_choice', 'date'],
 			typeLabel: {
 				text: 'Text',
 				number: 'Number',
 				select: 'Select',
 				multiple_choice: 'Multiple choice',
+				date: 'Date',
 			},
 		};
 	}

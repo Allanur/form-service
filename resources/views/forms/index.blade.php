@@ -52,6 +52,7 @@
 									{{ $form->created_at->translatedFormat('d M Y - H:i') }}
 								</td>
 								<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+									<a href="{{ route('forms.edit', $form) }}" class="text-green-500 hover:text-green-700 mr-2">Groups</a>
 									<a href="{{ route('forms.edit', $form) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 									<button class="text-red-500 hover:text-red-600 font-medium ml-2" form="delete-form-{{ $form->id }}">Delete</button>
 									<form action="{{ route('forms.destroy', $form) }}" method="post" id="delete-form-{{ $form->id }}">

@@ -16,4 +16,9 @@ class Form extends Model
     {
         return $this->hasMany(Property::class)->orderBy('order');
     }
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
 }

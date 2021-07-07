@@ -9,8 +9,8 @@
 			<c-text :name="'properties['+propertyIndex+'][values]['+valueIndex+'][value]'" v-model="modelValue.value"/>
 		</div>
 		<div class="col-span-1 ml-auto">
-			<button type="button" class="btn btn-circle bg-gray-100 hover:bg-gray-200 transition-all" @click="$emit('removeClicked', valueIndex)">
-				<XIcon class="w-4 h-4"/>
+			<button type="button" class="btn-action bg-red-600 hover:bg-red-400 transition-all text-white" @click="$emit('removeClicked', valueIndex)">
+				<XIcon/>
 			</button>
 		</div>
 		<div class="col-span-10 col-start-2 text-xs text-red-400" v-if="v$.modelValue.value.$error">

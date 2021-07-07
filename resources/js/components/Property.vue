@@ -20,7 +20,7 @@
 				<c-select v-model="modelValue.type" :index="propertyIndex"/>
 			</div>
 			<div class="col-span-1" v-if="valuesRequired">
-				<button type="button" class="btn btn-circle bg-gray-100 hover:bg-gray-300 mt-6" @click="show = !show">
+				<button type="button" class="btn-action-big bg-gray-100 hover:bg-gray-300 mt-8 h-10 w-10" @click="show = !show">
 					<ChevronDownIcon/>
 				</button>
 			</div>
@@ -47,11 +47,11 @@
 		</transition>
 
 		<div class="mt-6">
-			<button type="button" class="btn btn-red btn-circle has-tooltip mr-4" @click="$emit('propertyRemoved', propertyIndex)">
+			<button type="button" class="btn-action btn-red has-tooltip mr-3" @click="$emit('propertyRemoved', propertyIndex)">
 				<TrashIcon/>
 				<span class='tooltip -mt-20'>Remove property</span>
 			</button>
-			<button type="button" class="btn btn-blue btn-circle has-tooltip" @click="addValue" v-if="valuesRequired">
+			<button type="button" class="btn-action btn-blue has-tooltip" @click="addValue" v-if="valuesRequired">
 				<PlusIcon/>
 				<span class='tooltip -mt-20'>Add value</span>
 			</button>
