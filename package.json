@@ -30,7 +30,9 @@
         "@heroicons/vue": "^1.0.1",
         "@vuelidate/core": "^2.0.0-alpha.19",
         "@vuelidate/validators": "^2.0.0-alpha.17",
+        "select2": "^4.1.0-rc.0",
         "vue-select": "git+https://github.com/sagalbot/vue-select.git#feat/vue-3-compat",
-        "vuedraggable": "^4.0.3"
+        "vuedraggable": "^4.0.3",
+        "vuex": "^4.0.2"
     }
 }

@@ -10,10 +10,15 @@ class Value extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['property_id', 'value', 'order'];
+    protected $fillable = ['property_id', 'goto_id', 'value', 'order'];
 
     public function property()
     {
         return $this->belongsTo(Property::class);
+    }
+
+    public function goto()
+    {
+        return $this->belongsTo(Property::class, 'goto_id');
     }
 }

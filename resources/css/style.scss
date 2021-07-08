@@ -1,1 +1,19 @@
+@import "./_variables";
 @import "~vue-select/src/scss/vue-select.scss";
+
+.vs__dropdown-toggle {
+    padding: 4px 0 8px 0 !important;
+}
+
+.vs__dropdown-option {
+    font-size: 0.875rem !important;
+    padding: 8px 8px !important;
+}
+
+.vs__search, .vs__search:focus {
+    font-size: 0.875rem !important;
+}
+
+.vs__selected {
+    font-size: 0.875rem !important;
+}

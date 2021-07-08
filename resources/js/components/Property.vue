@@ -20,7 +20,7 @@
 				<c-select v-model="modelValue.type" :index="propertyIndex"/>
 			</div>
 			<div class="col-span-1" v-if="valuesRequired">
-				<button type="button" class="btn-action-big bg-gray-100 hover:bg-gray-300 mt-8 h-10 w-10" @click="show = !show">
+				<button type="button" class="btn-action-big bg-gray-100 hover:bg-gray-300 mt-8" @click="show = !show">
 					<ChevronDownIcon/>
 				</button>
 			</div>
@@ -116,8 +116,7 @@ export default {
 	watch: {
 		modelValue: {
 			handler(val) {
-				console.log(val.values);
-				console.log(val.values.length);
+				// console.log(val.values);
 			},
 			deep: true,
 		}
@@ -132,7 +131,7 @@ export default {
 					required,
 				},
 				values: {
-					required: helpers.withMessage('Property must contain at least one value', requiredIf(this.valuesRequirede)),
+					required: helpers.withMessage('Property must contain at least one value', requiredIf(this.valuesRequired)),
 				}
 			},
 		}

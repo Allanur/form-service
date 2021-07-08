@@ -198,7 +198,7 @@
 }
 
 .vs__dropdown-option--highlight {
-  background: #5897fb;
+  background: #60a5fa !important;
   color: #fff;
 }
 
@@ -218,7 +218,7 @@
   border: 1px solid rgba(60, 60, 60, 0.26);
   border-radius: 4px;
   color: #333;
-  line-height: 1.4;
+  line-height: 1.4 !important;
   margin: 4px 2px 0px 2px;
   padding: 0 0.25em;
   z-index: 0;
@@ -273,7 +273,7 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  line-height: 1.4;
+  line-height: 1.4 !important;
   font-size: 1em;
   border: 1px solid transparent;
   border-left: none;
@@ -289,15 +289,15 @@
 }
 
 .vs__search::-moz-placeholder {
-  color: inherit;
+  color: grey !important;
 }
 
 .vs__search:-ms-input-placeholder {
-  color: inherit;
+  color: grey !important;
 }
 
 .vs__search::placeholder {
-  color: inherit;
+  color: grey !important;
 }
 
 /**
@@ -341,4 +341,21 @@
 /* Loading Spinner States */
 .vs--loading .vs__spinner {
   opacity: 1;
+}
+
+.vs__dropdown-toggle {
+  padding: 4px 0 8px 0 !important;
+}
+
+.vs__dropdown-option {
+  font-size: 0.875rem !important;
+  padding: 8px 8px !important;
+}
+
+.vs__search, .vs__search:focus {
+  font-size: 0.875rem !important;
+}
+
+.vs__selected {
+  font-size: 0.875rem !important;
 }

@@ -9,13 +9,28 @@ use Illuminate\Cache\RateLimiter;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\UpdatePassword;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
     private $maxAttempts = 5;
     private $decayMinutes = 1;
+
+    public function editPasswordForm()
+    {
+        return view('auth.edit-password');
+    }
+
+    public function updatePassword(UpdatePassword $request)
+    {
+        $request->user()->password = Hash::make($request->password);
+        $request->user()->save();
+
+        return back()->with('success', 'Password changed successfully');
+    }
 
     public function showLoginForm()
     {

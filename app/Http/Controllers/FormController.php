@@ -38,7 +38,7 @@ class FormController extends Controller
     {
         $form->update($request->validated());
 
-        foreach ($request->properties as $order => $data) {
+        foreach ($request->properties ?? [] as $order => $data) {
             try {
                 $property = $form->properties()->findOrFail($data['id'] ?? null);
                 $property->update([
@@ -65,8 +65,9 @@ class FormController extends Controller
                     $property->values()
                              ->findOrFail($value['id'] ?? null)
                              ->update([
-                                 'value' => $value['value'],
-                                 'order' => $value['order'],
+                                 'value'   => $value['value'],
+                                 'order'   => $value['order'],
+                                 'goto_id' => $value['goto_id'] ?? null,
                              ]);
                 } catch (ModelNotFoundException $e) {
                     $property->values()

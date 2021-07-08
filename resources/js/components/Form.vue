@@ -4,16 +4,15 @@
 		<input type="hidden" name="_method" value="put">
 
 		<div class="card border-t-8 border-blue-500">
-
-			<c-text v-model="title" name="title" label="Title"/>
-			<c-textarea v-model="description" name="description" label="Description" class="mt-4"/>
+			<c-text v-model="title" name="title" label="Title" :error-message="v$.title.$errors[0]?.$message"/>
+			<c-textarea v-model="description" name="description" label="Description" class="mt-4" :error-message="v$.description.$errors[0]?.$message"/>
 
 			<div class="text-right mt-4">
 				<button type="button" class="btn btn-light btn-icon-text mr-2" @click="addProperty">
 					<CollectionIcon class="h-5 w-5"/>
 					Add property
 				</button>
-				<button class="btn btn-blue btn-icon-text">
+				<button class="btn btn-blue btn-icon-text" @click="submitForm">
 					<PencilIcon class="h-5 w-5"/>
 					Update
 				</button>
@@ -22,11 +21,11 @@
 
 		<div class="my-5 font-bold text-lg">Properties:</div>
 
-		<div class="grid grid-cols-7 gap-4 mb-32" ref="propContainer">
+		<div class="w-4/5 mx-auto mb-32" ref="propContainer">
 			<draggable
 				v-model="properties"
 				item-key="propertyOrder"
-				class="col-span-5 col-start-2 space-y-4 scrollable"
+				class="space-y-4 scrollable"
 				:animation="200"
 				ghost-class="opacity-50"
 				type="transition-group"
@@ -47,6 +46,8 @@ import Property from "./Property";
 import CText from "./fields/Text";
 import {DotsVerticalIcon, PencilIcon, CollectionIcon} from '@heroicons/vue/solid'
 import draggable from "vuedraggable";
+import useVuelidate from "@vuelidate/core";
+import {helpers, required} from "@vuelidate/validators";
 
 export default {
 	name: "CForm",
@@ -64,6 +65,11 @@ export default {
 		CollectionIcon,
 		draggable,
 	},
+	setup() {
+		return {
+			v$: useVuelidate(),
+		};
+	},
 	data() {
 		return {
 			routes: {
@@ -77,7 +83,16 @@ export default {
 			dragging: false,
 		};
 	},
+	created() {
+		this.$store.commit('setFormProperties', this.properties);
+	},
 	methods: {
+		submitForm: function (e) {
+			this.v$.$validate();
+			if (this.v$.$error) {
+				e.preventDefault();
+			}
+		},
 		addProperty() {
 			this.properties.push({
 				id: null,
@@ -101,6 +116,16 @@ export default {
 		removeProperty(i) {
 			this.properties.splice(i, 1);
 		}
-	}
+	},
+	validations() {
+		return {
+			title: {
+				required: helpers.withMessage('Form title required', required),
+			},
+			description: {
+				required: helpers.withMessage('Form description required', required),
+			},
+		}
+	},
 }
 </script>

@@ -16,7 +16,7 @@ class FormUpdate extends FormRequest
         return [
             'title'                 => 'required',
             'description'           => 'required',
-            'properties'            => 'required|array|min:1',
+            'properties'            => 'nullable|array|min:1',
             'properties.*.name'     => 'required',
             'properties.*.type'     => 'required|in:text,number,select,multiple_choice,date',
             'properties.*.values'   => 'nullable|array|min:1',

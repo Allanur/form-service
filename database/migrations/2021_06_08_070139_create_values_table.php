@@ -17,6 +17,7 @@ class CreateValuesTable extends Migration
         Schema::create('values', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Property::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Property::class, 'goto_id')->nullable()->constrained('properties')->cascadeOnDelete();
             $table->text('value');
             $table->unsignedInteger('order');
             $table->timestamps();

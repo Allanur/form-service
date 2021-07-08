@@ -9,8 +9,9 @@ class Value extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'    => $this->id,
-            'value' => $this->value,
+            'id'      => $this->id,
+            'value'   => $this->value,
+            'goto_id' => $this->goto_id,
         ];
     }
 }

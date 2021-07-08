@@ -20,7 +20,6 @@ class CreateGroupPropertiesTable extends Migration
             $table->foreignIdFor(Group::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Property::class)->constrained()->cascadeOnDelete();
             $table->unique(['group_id', 'property_id']);
-            $table->timestamps();
         });
     }
 
